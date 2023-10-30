@@ -7,10 +7,10 @@ from fastapi.responses import RedirectResponse # esta libreria funciona para la 
 app=FastAPI()
 
 # Cargar los datos desde los archivos CSV y Parquet
-genre_data = pd.read_csv('genre.csv')
-items_data = pd.read_parquet('items1.parquet')
-reviews_data = pd.read_csv('reviews.csv')
-steam_data = pd.read_csv('steam.csv')
+genre_data = pd.read_csv(r'C:\Users\Administrador\Desktop\vitual\MlOprsSteam\genre.csv')
+items_data = pd.read_parquet(r'C:\Users\Administrador\Desktop\vitual\MlOprsSteam\items1.parquet')
+reviews_data = pd.read_csv(r'C:\Users\Administrador\Desktop\vitual\MlOprsSteam\reviews.csv')
+steam_data = pd.read_csv(r'C:\Users\Administrador\Desktop\vitual\MlOprsSteam\steam.csv')
 
 
 @app.get("/", include_in_schema=False)  # esta funcion genera que la url ya venga con /doc*/ haciendo que se abra directo el API. 
@@ -20,7 +20,7 @@ async def redirect_to_docs():
 
 # Se definen los endpoints de la API:
 
-@app.get("/¡Hola, bienvenido!") # Funcion que saluda a los ingresantes.
+@app.get("/Gracias por entrar a mi api, me tomo muchas lagrimas :') ") # Funcion que saluda a los ingresantes.
 def index():
         return {"message": "¡HOLA, Bienvenido!"}
 
